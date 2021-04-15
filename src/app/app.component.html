@@ -1,49 +1,54 @@
 <header>
-  <div class="slicknav_menu"><a href="#" aria-haspopup="true" tabindex="0" class="slicknav_btn slicknav_collapsed"
+  <div class="slicknav_menu"><a routerLink="#" aria-haspopup="true" tabindex="0" class="slicknav_btn slicknav_collapsed"
       aria-label="menu" style="outline: none;"><span class="slicknav_menutxt"></span><span
         class="slicknav_icon slicknav_no-text"><span class="slicknav_icon-bar"></span><span
           class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a>
     <ul class="slicknav_nav slicknav_hidden" style="display: none;" aria-hidden="true" role="menu">
-      <li><a href="/browse/" role="menuitem" tabindex="-1">File Types</a></li>
-      <li><a href="/software/" role="menuitem" tabindex="-1">Software</a></li>
-      <li><a href="/help/" role="menuitem" tabindex="-1">Help</a></li>
-      <li><a href="#" class="themeToggle" title="Switch to dark theme" aria-label="Switch to dark theme" role="menuitem"
-          tabindex="-1"><span class="theme">Dark</span></a></li>
+      <li><a routerLink="/browse/" role="menuitem" tabindex="-1">File Types</a></li>
+      <li><a routerLink="/software/" role="menuitem" tabindex="-1">Software</a></li>
+      <li><a routerLink="/help/" role="menuitem" tabindex="-1">Help</a></li>
+      <li><a routerLink="#" class="themeToggle" title="Switch to dark theme" aria-label="Switch to dark theme"
+          role="menuitem" tabindex="-1"><span class="theme">Dark</span></a></li>
     </ul>
   </div>
-  <div id="content"><a href="/" class="home"><span class="visuallyhidden">FileInfo</span></a>
+  <div id="content"><a routerLink="/" class="home"><span class="visuallyhidden">FileInfo</span></a>
     <form action="/search" method="post" id="search">
       <div id="swrap">
         <input type="text" name="term" id="term" tabindex="1" placeholder="Search" aria-label="Search"
           autocomplete="off">
         <div id="sdiv"><button type="submit" id="submit"><span class="visuallyhidden">Submit</span></button><a
-            id="sbutton" href="/search">Advanced Search</a></div>
+            id="sbutton" routerLink="/search">Advanced Search</a></div>
       </div>
     </form>
-    <a href="/random" class="random" title="Random Extension"></a>
-    <a href="" id="search_button"><span class="visuallyhidden">Search</span></a>
+    <a routerLink="/random" class="random" title="Random Extension"></a>
+    <a routerLink="" id="search_button"><span class="visuallyhidden">Search</span></a>
     <nav>
       <ul id="menu">
-        <li><a href="/browse/">File Types</a></li>
-        <li><a href="/software/">Software</a></li>
-        <li><a href="/help/">Help</a></li>
-        <li><a href="#" class="themeToggle" title="Switch to dark theme" aria-label="Switch to dark theme"><span
+        <li><a routerLink="/browse/">File Types</a></li>
+        <li><a routerLink="/software/">Software</a></li>
+        <li><a routerLink="/help/">Help</a></li>
+        <li><a routerLink="#" class="themeToggle" title="Switch to dark theme" aria-label="Switch to dark theme"><span
               class="theme">Dark</span></a></li>
       </ul>
     </nav>
   </div>
 </header>
-<router-outlet></router-outlet>
+<main>
+  <div id="main">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
 <footer>
-  <a href="https://sharpened.com/" target="_blank" rel="noopener">
+  <a routerLink="https://sharpened.com/" target="_blank" rel="noopener">
     <span class="copyright">© 2021 Sharpened Productions</span>
   </a>
   &nbsp;|&nbsp;
-  <a href="/terms">Terms of Use</a>
+  <a routerLink="/terms">Terms of Use</a>
   &nbsp;|&nbsp;
-  <a href="/privacy">Privacy Policy</a>
+  <a routerLink="/privacy">Privacy Policy</a>
   &nbsp;|&nbsp;
-  <a href="/about">About</a>
+  <a routerLink="/about">About</a>
   &nbsp;|&nbsp;
-  <a href="/contact">Contact</a>
+  <a routerLink="/contact">Contact</a>
 </footer>

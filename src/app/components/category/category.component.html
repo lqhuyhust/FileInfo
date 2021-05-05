@@ -20,11 +20,13 @@
             <table class="slist browselist dataTable no-footer" data-sort="2" id="DataTables_Table_0" role="grid">
                 <thead>
                     <tr role="row">
-                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                            aria-label="File Extension: activate to sort column ascending" style="width: 157px;">File
-                            Extension</th>
-                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                            aria-label="File Type: activate to sort column ascending" style="width: 401px;">File Type
+                        <th (click)="sort('extension')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                            rowspan="1" colspan="1" aria-label="File Extension: activate to sort column ascending"
+                            style="width: 157px;">File
+                            Extension&nbsp;<i class="fa fa-sort"></i></th>
+                        <th (click)="sort('type')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                            rowspan="1" colspan="1" aria-label="File Type: activate to sort column ascending"
+                            style="width: 401px;">File Type&nbsp;<i class="fa fa-sort"></i>
                         </th>
                         <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                             aria-sort="ascending" aria-label="Popularity: activate to sort column descending"
@@ -32,8 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let type of type_list; let even = even; let odd = odd"
-                        [ngClass]="{ odd: odd, even: even }">
+                    <tr *ngFor="let type of type_list | orderBy: key: reverse">
                         <td><a [routerLink]="['/extension', type.id]">{{type.name}}</a></td>
                         <td>{{type.type}}</td>
                         <td class="sorting_1"><span class="hidden">187</span><span class="rtg four"></span>
@@ -55,7 +56,8 @@
     <h5>All Categories</h5>
     <div class="cnav">
         <ul class="category-list">
-            <li *ngFor="let category of categories; let last = last" [ngClass]="{ last: last }">
+            <li *ngFor="let category of categories; let last = last"
+                [ngClass]="                                                                                                                                                                                                                                                                                                                                            { last: last }">
                 <a [routerLink]="['/filetypes', category.id]">{{category.name}}</a>
             </li>
         </ul>

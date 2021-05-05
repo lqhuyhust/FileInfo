@@ -30,4 +30,10 @@ export class CategoryComponent implements OnInit {
     });
   }
 
+  key = 'extension';
+  reverse: boolean = false;
+  sort(key: string) {
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
 }

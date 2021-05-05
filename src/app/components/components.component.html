@@ -1,0 +1,64 @@
+<header>
+    <div class="slicknav_menu"><a routerLink="#" aria-haspopup="true" tabindex="0"
+            class="slicknav_btn slicknav_collapsed" aria-label="menu" style="outline: none;"><span
+                class="slicknav_menutxt"></span><span class="slicknav_icon slicknav_no-text"><span
+                    class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span
+                    class="slicknav_icon-bar"></span></span></a>
+        <ul class="slicknav_nav slicknav_hidden" style="display: none;" aria-hidden="true" role="menu">
+            <li><a routerLink="/browse/" role="menuitem" tabindex="-1">File Types</a></li>
+            <li><a routerLink="/software/" role="menuitem" tabindex="-1">Software</a></li>
+            <li><a routerLink="/help/" role="menuitem" tabindex="-1">Help</a></li>
+            <li><a routerLink="#" class="themeToggle" title="Switch to dark theme" aria-label="Switch to dark theme"
+                    role="menuitem" tabindex="-1"><span class="theme">Dark</span></a></li>
+        </ul>
+    </div>
+    <div id="content"><a routerLink="/" class="home"><span class="visuallyhidden">FileInfo</span></a>
+        <form action="/search" method="post" id="search">
+            <div id="swrap">
+                <input type="text" name="term" id="term" tabindex="1" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-text" [(ngModel)]="searchText" (ngModelChange)="Search()"
+                    autocomplete="off">
+                <ul id="filter-result" class="list-group list-group-flush" style="display: none;">
+                    <!-- results of ngFor is passed to appFilter with argument searchText -->
+                    <li class="list-group-item" *ngFor="let t of types">
+                        <a [routerLink]="['/extension', t.id]">{{t.name}}</a>
+                    </li>
+                </ul>
+                <div id="sdiv">
+                    <button type="submit" id="submit"><span class="visuallyhidden">Submit</span></button>
+                    <a id="sbutton" routerLink="/search">Advanced Search</a>
+                </div>
+            </div>
+        </form>
+        <a routerLink="/random" class="random" title="Random Extension"></a>
+        <a routerLink="" id="search_button"><span class="visuallyhidden">Search</span></a>
+        <nav>
+            <ul id="menu">
+                <li><a routerLink="/browse/">File Types</a></li>
+                <li><a routerLink="/software/">Software</a></li>
+                <li><a routerLink="/help/">Help</a></li>
+                <li><a routerLink="#" class="themeToggle" title="Switch to dark theme"
+                        aria-label="Switch to dark theme"><span class="theme">Dark</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <div id="main">
+        <router-outlet></router-outlet>
+    </div>
+</main>
+
+<footer>
+    <a routerLink="https://sharpened.com/" target="_blank" rel="noopener">
+        <span class="copyright">© 2021 Sharpened Productions</span>
+    </a>
+    &nbsp;|&nbsp;
+    <a routerLink="/terms">Terms of Use</a>
+    &nbsp;|&nbsp;
+    <a routerLink="/privacy">Privacy Policy</a>
+    &nbsp;|&nbsp;
+    <a routerLink="/about">About</a>
+    &nbsp;|&nbsp;
+    <a routerLink="/contact">Contact</a>
+</footer>

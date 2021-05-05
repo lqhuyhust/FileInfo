@@ -1,19 +1,19 @@
 <div id="lwrap">
     <div id="left">
-        <h5><a href="https://fileinfo.com/">Home</a> : <a href="https://fileinfo.com/browse/">File Types</a>
-            : FPT File</h5>
+        <h5><a routerLink="/">Home</a> : <a routerLink="/browse">File Types</a>
+            : {{type.name}} File</h5>
         <article>
-            <h1><b>.FPT</b><span class="filext"> File Extension</span></h1>
+            <h1><b>{{type.name}}</b><span class="filext"> File Extension</span></h1>
 
             <section id="filemaker_pro_database_memo_file" class="ext">
-                <h2><span class="fileType">File Type 1</span>FileMaker Pro Database Memo File</h2>
+                <h2><span class="fileType">File Type </span>{{type.type}}</h2>
                 <div class="fileHeader">
                     <div class="fileIcon default" title="Document Icon"></div>
                     <table class="headerInfo">
                         <tbody>
                             <tr>
                                 <td>Developer</td>
-                                <td>FileMaker</td>
+                                <td>{{type.developer}}</td>
                             </tr>
                             <tr>
                                 <td>Popularity</td>
@@ -80,15 +80,11 @@
                 </div>
                 <h2 class="question">What is an FPT file?</h2>
                 <div class="infoBox">
-                    <p>Database file created by FileMaker Pro, a relational database program; contains
-                        textual information representing a "memo;" used to describe a database with raw text
-                        instead of using a standard database field, which typically is limited to fewer
-                        numbers of characters.</p>
+                    <p>{{type.info}}</p>
                 </div>
                 <div class="tab">More Information</div>
                 <div class="infoBox">
-                    <p>FPT files do not contain the actual database information. They only store the memo
-                        comments.</p>
+                    <p>{{type.more_info}}</p>
                 </div>
                 <a href="https://fileinfo.com/software/windows_file_viewer?ref=30" class="fv">
                     <div class="promo">FREE DOWNLOAD</div> Open over 400 file formats with File Viewer Plus.
@@ -162,13 +158,7 @@
         </article>
         <div class="fileinfo">
             <h4>About FPT Files</h4>
-            <p>Our goal is to help you understand what a file with a *.fpt suffix is and how to open it.</p>
-            <p>All file types, file format descriptions, and software programs listed on this page have been
-                individually <a href="https://fileinfo.com/help/authors">researched and verified by the
-                    FileInfo team</a>. We strive for 100% accuracy and only publish information about file
-                formats that we have tested and validated.</p>
-            <p>If you would like to suggest any additions or updates to this page, <a
-                    href="https://fileinfo.com/contact?form=update">please let us know</a>.</p>
+            <p>{{type.about}}</p>
         </div>
     </div>
 </div>

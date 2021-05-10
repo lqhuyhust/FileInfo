@@ -17,6 +17,12 @@ import { TypeComponent } from './components/type/type.component';
 import { ComponentsComponent } from './components/components.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import { SoftGroupComponent } from './components/software/soft-group/soft-group.component';
+import { SoftDetailComponent } from './components/software/soft-detail/soft-detail.component';
+import { SoftBrowseComponent } from './components/software/soft-browse/soft-browse.component';
+import { SoftCategoryComponent } from './components/software/soft-category/soft-category.component';
+import { SoftListComponent } from './components/software/soft-list/soft-list.component';
+import { SoftAlphabetComponent } from './components/software/soft-alphabet/soft-alphabet.component';
 
 
 @NgModule({
@@ -32,7 +38,13 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
     CategoryComponent,
     AlphabetComponent,
     TypeComponent,
-    ComponentsComponent
+    ComponentsComponent,
+    SoftGroupComponent,
+    SoftDetailComponent,
+    SoftBrowseComponent,
+    SoftCategoryComponent,
+    SoftListComponent,
+    SoftAlphabetComponent
   ],
   imports: [
     BrowserModule,

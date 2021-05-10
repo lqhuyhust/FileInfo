@@ -15,7 +15,13 @@ export class CategoryComponent implements OnInit {
   constructor(
     private httpClient: HttpClient,
     private route: ActivatedRoute,
-  ) { }
+    private router: Router,
+  ) {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+  }
+
 
   ngOnInit(): void {
     this.httpClient.get("/assets/json/categories.json").subscribe(data => {

@@ -3,13 +3,13 @@ import { HttpClient } from "@angular/common/http";
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-alphabet',
-  templateUrl: './alphabet.component.html',
-  styleUrls: ['./alphabet.component.css']
+  selector: 'app-soft-alphabet',
+  templateUrl: './soft-alphabet.component.html',
+  styleUrls: ['./soft-alphabet.component.css']
 })
-export class AlphabetComponent implements OnInit {
-  extensions: any = [];
-  ex_list: any = [];
+export class SoftAlphabetComponent implements OnInit {
+  softwares: any = [];
+  soft_list: any = [];
   letter: string = '';
   alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -24,11 +24,10 @@ export class AlphabetComponent implements OnInit {
     this.letter = this.route.snapshot.params['id'].toLocaleUpperCase();
   }
 
-
   ngOnInit(): void {
-    this.httpClient.get("/assets/json/types.json").subscribe(data => {
-      this.extensions = data;
-      this.ex_list = this.extensions.filter((el: { name: string; }) => el.name.charAt(1).toLocaleUpperCase() === this.letter);
+    this.httpClient.get("/assets/json/softwares.json").subscribe(data => {
+      this.softwares = data;
+      this.soft_list = this.softwares.filter((el: { name: string; }) => el.name.charAt(0).toLocaleUpperCase() === this.letter);
     });
   }
 

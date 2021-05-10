@@ -163,7 +163,8 @@
     </div>
 </div>
 <div id="right">
-    <h5><a href="https://fileinfo.com/extension/fpsx">‹ .FPSX</a> | <a href="https://fileinfo.com/extension/fpx">.FPX
+    <h5><a [routerLink]="['/extension/', pre.id]">‹ {{pre.name}}</a> | <a [routerLink]="['/extension/', next.id]">
+            {{next.name}}
             ›</a></h5>
     <div class="linkAds">
         <script async="" src="./FPT File Extension - What is an .fpt file and how do I open it__files/f.txt"></script>

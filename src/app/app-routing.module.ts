@@ -11,6 +11,12 @@ import { CategoryComponent } from './components/category/category.component';
 import { AlphabetComponent } from './components/alphabet/alphabet.component';
 import { TypeComponent } from './components/type/type.component';
 import { ComponentsComponent } from './components/components.component';
+import { SoftGroupComponent } from './components/software/soft-group/soft-group.component';
+import { SoftDetailComponent } from './components/software/soft-detail/soft-detail.component';
+import { SoftBrowseComponent } from './components/software/soft-browse/soft-browse.component';
+import { SoftCategoryComponent } from './components/software/soft-category/soft-category.component';
+import { SoftListComponent } from './components/software/soft-list/soft-list.component';
+import { SoftAlphabetComponent } from './components/software/soft-alphabet/soft-alphabet.component';
 
 const routes: Routes = [
   {
@@ -21,7 +27,16 @@ const routes: Routes = [
       { path: 'developer', component: DeveloperComponent },
       { path: 'help', component: HelpComponent },
       { path: 'browse', component: BrowseComponent },
-      { path: 'software', component: SoftwareComponent },
+      {
+        path: 'software', component: SoftwareComponent, children: [
+          { path: '', component: SoftListComponent },
+          { path: 'browse', component: SoftBrowseComponent },
+          { path: 'category/:id', component: SoftCategoryComponent },
+          { path: 'list/:id', component: SoftAlphabetComponent },
+          { path: 'group/:id', component: SoftGroupComponent },
+          { path: ':id', component: SoftDetailComponent }
+        ]
+      },
       { path: 'filetypes/:id', component: CategoryComponent },
       { path: 'list/:id', component: AlphabetComponent },
       { path: 'extension/:id', component: TypeComponent },

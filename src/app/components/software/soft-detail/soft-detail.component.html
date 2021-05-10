@@ -1,0 +1,167 @@
+<div id="lwrap">
+    <div id="left">
+        <h5><a href="https://fileinfo.com/software/">Software</a> : <a
+                href="https://fileinfo.com/software/microsoft/">Microsoft</a> : Outlook Express</h5>
+        <article class="sw" *ngIf="soft">
+            <h1 class="medText">{{soft.name}}</h1>
+            <div class="swHeader">
+                <div class="swIcon icon1" title="Microsoft Outlook Express Icon"></div>
+                <table class="headerInfo">
+                    <tbody>
+                        <tr>
+                            <td>Version<br>
+                                <div class="vDate">(as {{soft.update_day}})</div>
+                            </td>
+                            <td class="version"><span class="vNum">{{soft.version}}</span></td>
+                        </tr>
+                        <tr>
+                            <td>Platforms</td>
+                            <td>
+                                <ul class="osIcon">
+                                    <li *ngFor="let item of soft.platform" [ngClass]="item"></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>License</td>
+                            <td>{{soft.license}}</td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td>{{soft.category_name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="headerLink">
+                    <tbody>
+                        <tr>
+                            <td><a [href]="'http://' + soft.url" rel="noopener" target="_blank" class="swLink">More Info
+                                    <div class="pub">
+                                        (visit publisher's website)</div>
+                                </a></td>
+                        </tr>
+                        <tr>
+                            <td class="swRating">
+                                <div class="stars">Rating: <div id="ursHolder407" class="ursHolder"
+                                        data-termname="Microsoft Outlook Express">
+                                        <div id="ratingStar1407" class="star1 hoverStar starImg ratingStar407 userStar"
+                                            data-termid="407" data-starnum="1"></div>
+                                        <div class="star1 hoverStar starImg emptyStar hidden greyStar407"
+                                            data-termid="407" data-starnum="1"></div>
+                                        <div id="userStar1407"
+                                            class="star1 hoverStar starImg userStar hidden userStar407"
+                                            data-termid="407" data-starnum="1"></div>
+                                        <div id="ratingStar2407" class="star2 hoverStar starImg ratingStar407 userStar"
+                                            data-termid="407" data-starnum="2"></div>
+                                        <div class="star2 hoverStar starImg emptyStar hidden greyStar407"
+                                            data-termid="407" data-starnum="2"></div>
+                                        <div id="userStar2407"
+                                            class="star2 hoverStar starImg userStar hidden userStar407"
+                                            data-termid="407" data-starnum="2"></div>
+                                        <div id="ratingStar3407" class="star3 hoverStar starImg ratingStar407 userStar"
+                                            data-termid="407" data-starnum="3"></div>
+                                        <div class="star3 hoverStar starImg emptyStar hidden greyStar407"
+                                            data-termid="407" data-starnum="3"></div>
+                                        <div id="userStar3407"
+                                            class="star3 hoverStar starImg userStar hidden userStar407"
+                                            data-termid="407" data-starnum="3"></div>
+                                        <div id="ratingStar4407" class="star4 hoverStar starImg ratingStar407 userStar"
+                                            data-termid="407" data-starnum="4"></div>
+                                        <div class="star4 hoverStar starImg emptyStar hidden greyStar407"
+                                            data-termid="407" data-starnum="4"></div>
+                                        <div id="userStar4407"
+                                            class="star4 hoverStar starImg userStar hidden userStar407"
+                                            data-termid="407" data-starnum="4"></div>
+                                        <div id="ratingStar5407" class="star5 hoverStar starImg ratingStar407 userStar"
+                                            data-termid="407" data-starnum="5"></div>
+                                        <div class="star5 hoverStar starImg emptyStar hidden greyStar407"
+                                            data-termid="407" data-starnum="5"></div>
+                                        <div id="userStar5407"
+                                            class="star5 hoverStar starImg userStar hidden userStar407"
+                                            data-termid="407" data-starnum="5"></div>
+                                        <div id="ratingNum407" class="ratingNum">
+                                            <div class="ratingsTotals">
+                                                <span id="avgVote407" class="avgVote"><b>{{soft.rate}}</b> / 5</span>
+                                                (<span id="voteCount407" class="voteCount">{{soft.total_vote}}</span>
+                                                <span id="voteWord407" class="voteWord"> Votes</span>)
+                                            </div>
+                                        </div>
+                                        <div id="ratingMsgDiv407" class="ratingMsgDiv">
+                                            <span id="rateMsg407" class="ratingMsg"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2 class="review">Software Overview</h2>
+            <div class="listBox features">
+                <p>Main Features</p>
+                <ul>
+                    <li *ngFor="let item of main_feature">{{item}}</li>
+                </ul>
+            </div>
+            <p>{{soft.overview}}</p>
+            <div class="adBotLB">
+                <div id="div-gpt-ad-1589911043271-0">
+                    <script>
+                        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589911043271-0'); });
+                    </script>
+                </div>
+            </div>
+            <h2 class="review supported">Supported File Types</h2>
+            <br>
+            <h4>Primary file extension</h4>
+            <div class="primary"><b><a href="https://fileinfo.com/extension/dbx">.DBX</a></b> – Outlook
+                Express E-mail Folder</div>
+            <h4>Other file extensions used by {{soft.name}} {{soft.version}}</h4>
+            <div class="extList1">
+                <table class="list">
+                    <tbody>
+                        <tr>
+                            <th colspan="2">Supported File Types</th>
+                        </tr>
+                        <tr *ngFor="let item of file_sup">
+                            <td><a [routerLink]="['/extension', item.id]">{{item.name}}</a></td>
+                            <td>{{item.type}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="extList2">
+                <table class="list">
+                    <tbody>
+                        <tr>
+                            <th colspan="2">Additional Related File Formats</th>
+                        </tr>
+                        <tr *ngFor="let item of additional_file">
+                            <td><a [routerLink]="['/extension', item.id]">.{{item.name}}</a></td>
+                            <td>{{item.type}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="swDate">Updated: {{soft.update_day}}</p>
+        </article>
+    </div>
+</div>
+<div id="right">
+    <h5><a [routerLink]="['/software', pre.id]" *ngIf="pre">‹ {{pre.name}}</a> | <a
+            [routerLink]="['/software', next.id]" *ngIf="next">{{next.name}} ›</a></h5>
+    <div class="linkAds">
+        <div id="div-gpt-ad-1617470860708-0">
+            <script>
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1617470860708-0'); });
+            </script>
+        </div>
+    </div>
+    <div class="adRightSky">
+        <div id="div-gpt-ad-1589922034061-0">
+            <script>
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589922034061-0'); });
+            </script>
+        </div>
+    </div>
+</div>

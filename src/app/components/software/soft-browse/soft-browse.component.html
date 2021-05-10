@@ -1,0 +1,76 @@
+<div id="lwrap">
+    <div id="left">
+        <h5><a href="https://fileinfo.com/">Home</a> : <a href="https://fileinfo.com/software/">Software</a>
+            : Browse</h5>
+        <article class="browse">
+            <h1 class="h2 circle"><a href="https://fileinfo.com/software/" class="largeCircle">
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m6 5c-1.105469 0-2 .894531-2 2s.894531 2 2 2 2-.894531 2-2-.894531-2-2-2zm5 1v2h17v-2zm-5 8c-1.105469 0-2 .894531-2 2s.894531 2 2 2 2-.894531 2-2-.894531-2-2-2zm5 1v2h17v-2zm-5 8c-1.105469 0-2 .894531-2 2s.894531 2 2 2 2-.894531 2-2-.894531-2-2-2zm5 1v2h17v-2z">
+                        </path>
+                    </svg></a>Browse Software</h1>
+            <div class="category">
+                <h3>Browse by Category</h3>
+                <ul class="category-list">
+                    <li *ngFor="let category of categories" class="category-item">
+                        <a [routerLink]="['/software/category', category.id]">{{category.name}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="alpha">
+                <h3>Browse Programs Alphabetically</h3>
+                <ul class="alphabet-list">
+                    <li class="alphabet-item">
+                        <a [routerLink]="['/software/list/1']">#</a>
+                    </li>
+                    <li *ngFor="let el of alphabet" class="alphabet-item">
+                        <a [routerLink]="['/software/list', el]">{{el}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="adBotLB">
+                <div id="div-gpt-ad-1589913000288-0">
+                    <script>
+                        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589913000288-0'); });
+                    </script>
+                </div>
+            </div>
+            <h3>Browse by Company</h3>
+            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+                <table class="slist browselist dataTable no-footer" id="DataTables_Table_0" role="grid">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending"
+                                style="width: 55px;">#
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                aria-label="Company: activate to sort column ascending" style="width: 374px;">Company
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                aria-label="Number of Programs: activate to sort column ascending"
+                                style="width: 249px;">Number of Programs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr role="row" *ngFor="let c of companies">
+                            <td class="sorting_1">{{c.id}}.</td>
+                            <td><a [routerLink]="['/software/list', c.id]">{{c.name}}</a></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </div>
+</div>
+<div id="right">
+    <h5><a routerLink="/browse">File Types</a> | <a routerLink="/help">Help</a></h5>
+    <div class="adRightSky" style="">
+        <div id="div-gpt-ad-1589922228072-0">
+            <script>
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589922228072-0'); });
+            </script>
+        </div>
+    </div>
+</div>

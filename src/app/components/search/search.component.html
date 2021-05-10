@@ -1,1 +1,90 @@
-<p>search works!</p>
+<h1 class="searchHeader"><a href="https://fileinfo.com/" class="medCircle">
+        <svg viewBox="0 0 32 32">
+            <path
+                d="m13.281 3c5.512 0 10 4.488 10 10 0 2.395-.84 4.59-2.25 6.313l7.969 7.968-1.438 1.438-7.968-7.969c-1.723 1.41-3.918 2.25-6.313 2.25-5.511 0-10-4.488-10-10s4.489-10 10-10zm0 2c-4.429 0-8 3.57-8 8s3.571 8 8 8c4.43 0 8-3.57 8-8s-3.57-8-8-8z">
+            </path>
+        </svg></a>Advanced Search</h1>
+<div id="advSearchBody">
+    <p>Search the FileInfo database or use <a class="opengss" href="https://fileinfo.com/search">Google Site
+            Search</a>.</p>
+    <div class="advSearchBox">
+        <div class="selectors" role="tablist" aria-label="search type">
+            <span>Search
+                <button role="tab" id="extension" aria-controls="extension-tab" aria-selected="true">File
+                    Extensions</button> or
+                <button role="tab" id="software" aria-controls="software-tab" aria-selected="false">Software
+                    Programs</button>.
+            </span>
+        </div>
+        <div role="tabpanel" id="extension-tab">
+            <form class="advSearchForm">
+                <div class="formrow">
+                    <div class="extensionfields formcol formleft">
+                        <span><b>Search within:</b></span>
+                        <ul>
+                            <li><input type="radio" name="sfield" value="filetype" id="filetype"><label
+                                    for="filetype">File
+                                    Type</label></li>
+                            <li><input type="radio" name="sfield" value="description" id="description" checked=""><label
+                                    for="description">Description</label></li>
+                            <li><input type="radio" name="sfield" value="developer" id="developer"><label
+                                    for="developer">Developer</label></li>
+                            <li><input type="radio" name="sfield" value="program" id="program"><label
+                                    for="program">Programs</label></li>
+                        </ul>
+                    </div>
+                    <div class="searchfield formcol formright">
+                        <label for="sterm_ext"><b>Term:</b></label>
+                        <input type="text" name="query" id="sterm_ext" autofocus="">
+                    </div>
+                    <div class="formcol">
+                        <input type="submit" value="Search">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div role="tabpanel" id="software-tab" hidden="">
+            <form class="advSearchForm">
+                <input type="hidden" name="stype" value="software">
+                <div class="formrow">
+                    <div class="softwarefields formcol formleft">
+                        <span><b>Search within:</b></span>
+                        <ul>
+                            <li><input type="radio" name="sfield" value="programname" id="programname"><label
+                                    for="programname">Program Name</label></li>
+                            <li><input type="radio" name="sfield" value="company" id="company"><label
+                                    for="company">Company</label></li>
+                            <li><input type="radio" name="sfield" value="sw_description" id="sw_description"><label
+                                    for="sw_description">Description</label></li>
+                        </ul>
+                    </div>
+                    <div class="searchfield formcol formright">
+                        <label for="sterm_sw"><b>Term:</b></label>
+                        <input type="text" name="query" id="sterm_sw">
+                    </div>
+                    <div class="formcol">
+                        <input type="submit" value="Search">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <h4><a href="https://fileinfo.com/">FileInfo Home</a></h4>
+</div> <!-- End Advanced Search Body -->
+<div id="gss" style="display: none;">
+    <p>Search FileInfo.com with Google Site Search.</p>
+    <form action="https://fileinfo.com/search_results" id="cse-search-box">
+        <div>
+            <input type="hidden" name="cx" value="partner-pub-0087137714961591:5209388801">
+            <input type="hidden" name="cof" value="FORID:10">
+            <input type="hidden" name="ie" value="UTF-8">
+            <input type="text" name="q" placeholder=""
+                style="background: url(&quot;https://www.google.com/cse/static/images/1x/en/branding.png&quot;) left 9px top 50% no-repeat rgb(255, 255, 255);">
+            <input type="submit" name="sa" value="Search">
+        </div>
+        <input name="siteurl" value="fileinfo.com/search" type="hidden"><input name="ref"
+            value="fileinfo.com/filetypes/text" type="hidden"><input name="ss" value="" type="hidden">
+    </form>
+    <script async="" src="./FileInfo Advanced Search_files/brand"></script>
+    <h4><a href="https://fileinfo.com/search" class="closegss">Back to FileInfo Search</a></h4>
+</div>

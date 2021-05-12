@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-soft-browse',
@@ -9,6 +10,7 @@ import { HttpClient } from "@angular/common/http";
 export class SoftBrowseComponent implements OnInit {
   categories: any = [];
   companies: any = [];
+  sortField: boolean = true;
   alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
   constructor(
@@ -26,4 +28,13 @@ export class SoftBrowseComponent implements OnInit {
     })
   }
 
+  sort(field: string) {
+    if (this.sortField) {
+      this.companies = _.orderBy(this.companies, [field], ['asc']);
+    } else {
+      this.companies = _.orderBy(this.companies, [field], ['desc']);
+    }
+
+    this.sortField = !this.sortField;
+  }
 }

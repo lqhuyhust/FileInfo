@@ -3,10 +3,8 @@
         "id": 1,
         "name": "Microsoft Outlook Express",
         "icon": "microsoft_outlook_express.png",
-        "group": {
-            "id": 1,
-            "name": "Microsoft"
-        },
+        "group_id": 1,
+        "group_name": "Microsoft",
         "version": "6",
         "update_day": "4/28/2017",
         "platform": [
@@ -17,7 +15,8 @@
         "category_id": 1,
         "category_name": "productivity",
         "total_vote": 568,
-        "rate": 4.8,
+        "rate": 3.9,
+        "rate_class": "three-half",
         "overview": "Microsoft Outlook Express was an email and news client that was bundled with Internet Explorer 4.0 through 6.0. It was also part of the Mac release of Microsoft Office. It has since been replaced by Windows Mail, which was replaced by the discontinued Windows Live Mail program. </br> Outlook Express lets you quickly and easily browse and manage your email. It can manage multiple email accounts from various email systems including POP and IMAP. It also has HTML editing features for sending emails so you can customize your messages as creatively as you desire. </br> There are many different email clients that are available, most of which are free. Because Outlook Express is no longer supported and is notorious for security and stability issues, it is not a recommended choice for checking email. It doesn't even have very effective spam blocking, unlike many email clients available today. If you are looking for a new email client, you are better off trying a different program like Mozilla Thunderbird.",
         "main_feature": [
             "Checks and sends email",
@@ -80,10 +79,8 @@
         "id": 2,
         "name": "Microsoft Office",
         "icon": "microsoft_office.png",
-        "group": {
-            "id": 1,
-            "name": "Microsoft"
-        },
+        "group_id": 1,
+        "group_name": "Microsoft",
         "version": "6",
         "update_day": "4/28/2017",
         "platform": [
@@ -94,7 +91,8 @@
         "category_id": 1,
         "category_name": "productivity",
         "total_vote": 568,
-        "rate": 4.8,
+        "rate": 1.7,
+        "rate_class": "one-half",
         "overview": "Microsoft Outlook Express was an email and news client that was bundled with Internet Explorer 4.0 through 6.0. It was also part of the Mac release of Microsoft Office. It has since been replaced by Windows Mail, which was replaced by the discontinued Windows Live Mail program. </br> Outlook Express lets you quickly and easily browse and manage your email. It can manage multiple email accounts from various email systems including POP and IMAP. It also has HTML editing features for sending emails so you can customize your messages as creatively as you desire. </br> There are many different email clients that are available, most of which are free. Because Outlook Express is no longer supported and is notorious for security and stability issues, it is not a recommended choice for checking email. It doesn't even have very effective spam blocking, unlike many email clients available today. If you are looking for a new email client, you are better off trying a different program like Mozilla Thunderbird.",
         "main_feature": [
             "Checks and sends email",
@@ -172,7 +170,8 @@
         "category_id": 1,
         "category_name": "productivity",
         "total_vote": 568,
-        "rate": 4.8,
+        "rate": 1.9,
+        "rate_class": "one-half",
         "overview": "Microsoft Outlook Express was an email and news client that was bundled with Internet Explorer 4.0 through 6.0. It was also part of the Mac release of Microsoft Office. It has since been replaced by Windows Mail, which was replaced by the discontinued Windows Live Mail program. </br> Outlook Express lets you quickly and easily browse and manage your email. It can manage multiple email accounts from various email systems including POP and IMAP. It also has HTML editing features for sending emails so you can customize your messages as creatively as you desire. </br> There are many different email clients that are available, most of which are free. Because Outlook Express is no longer supported and is notorious for security and stability issues, it is not a recommended choice for checking email. It doesn't even have very effective spam blocking, unlike many email clients available today. If you are looking for a new email client, you are better off trying a different program like Mozilla Thunderbird.",
         "main_feature": [
             "Checks and sends email",
@@ -236,10 +235,8 @@
         "name": "Microsoft Notepad",
         "icon": "microsoft_outlook_express.png",
         "version": "6",
-        "group": {
-            "id": 1,
-            "name": "Microsoft"
-        },
+        "group_id": 1,
+        "group_name": "Microsoft",
         "update_day": "4/28/2017",
         "platform": [
             "win"
@@ -248,7 +245,8 @@
         "category_id": 1,
         "category_name": "productivity",
         "total_vote": 568,
-        "rate": 4.8,
+        "rate": 2.6,
+        "rate_class": "two-half",
         "overview": "Microsoft Outlook Express was an email and news client that was bundled with Internet Explorer 4.0 through 6.0. It was also part of the Mac release of Microsoft Office. It has since been replaced by Windows Mail, which was replaced by the discontinued Windows Live Mail program. </br> Outlook Express lets you quickly and easily browse and manage your email. It can manage multiple email accounts from various email systems including POP and IMAP. It also has HTML editing features for sending emails so you can customize your messages as creatively as you desire. </br> There are many different email clients that are available, most of which are free. Because Outlook Express is no longer supported and is notorious for security and stability issues, it is not a recommended choice for checking email. It doesn't even have very effective spam blocking, unlike many email clients available today. If you are looking for a new email client, you are better off trying a different program like Mozilla Thunderbird.",
         "main_feature": [
             "Checks and sends email",
@@ -312,10 +310,8 @@
         "name": "Microsoft Word",
         "icon": "microsoft_word.png",
         "version": "6",
-        "group": {
-            "id": 1,
-            "name": "Microsoft"
-        },
+        "group_id": 1,
+        "group_name": "Microsoft",
         "update_day": "4/28/2017",
         "platform": [
             "win",
@@ -325,7 +321,8 @@
         "category_id": 1,
         "category_name": "productivity",
         "total_vote": 568,
-        "rate": 4.8,
+        "rate": 2.6,
+        "rate_class": "two-half",
         "overview": "Microsoft Outlook Express was an email and news client that was bundled with Internet Explorer 4.0 through 6.0. It was also part of the Mac release of Microsoft Office. It has since been replaced by Windows Mail, which was replaced by the discontinued Windows Live Mail program. </br> Outlook Express lets you quickly and easily browse and manage your email. It can manage multiple email accounts from various email systems including POP and IMAP. It also has HTML editing features for sending emails so you can customize your messages as creatively as you desire. </br> There are many different email clients that are available, most of which are free. Because Outlook Express is no longer supported and is notorious for security and stability issues, it is not a recommended choice for checking email. It doesn't even have very effective spam blocking, unlike many email clients available today. If you are looking for a new email client, you are better off trying a different program like Mozilla Thunderbird.",
         "main_feature": [
             "Checks and sends email",
@@ -389,10 +386,8 @@
         "name": "Microsoft Excel",
         "icon": "microsoft_excel.png",
         "version": "6",
-        "group": {
-            "id": 1,
-            "name": "Microsoft"
-        },
+        "group_id": 1,
+        "group_name": "Microsoft",
         "update_day": "4/28/2017",
         "platform": [
             "win",
@@ -402,7 +397,8 @@
         "category_id": 1,
         "category_name": "productivity",
         "total_vote": 568,
-        "rate": 4.8,
+        "rate": 3.1,
+        "rate_class": "three",
         "overview": "Microsoft Outlook Express was an email and news client that was bundled with Internet Explorer 4.0 through 6.0. It was also part of the Mac release of Microsoft Office. It has since been replaced by Windows Mail, which was replaced by the discontinued Windows Live Mail program. </br> Outlook Express lets you quickly and easily browse and manage your email. It can manage multiple email accounts from various email systems including POP and IMAP. It also has HTML editing features for sending emails so you can customize your messages as creatively as you desire. </br> There are many different email clients that are available, most of which are free. Because Outlook Express is no longer supported and is notorious for security and stability issues, it is not a recommended choice for checking email. It doesn't even have very effective spam blocking, unlike many email clients available today. If you are looking for a new email client, you are better off trying a different program like Mozilla Thunderbird.",
         "main_feature": [
             "Checks and sends email",
@@ -466,10 +462,8 @@
         "name": "Microsoft Power Point",
         "icon": "microsoft_power_point.png",
         "version": "6",
-        "group": {
-            "id": 1,
-            "name": "Microsoft"
-        },
+        "group_id": 1,
+        "group_name": "Microsoft",
         "update_day": "4/28/2017",
         "platform": [
             "win",
@@ -479,7 +473,8 @@
         "category_id": 1,
         "category_name": "productivity",
         "total_vote": 568,
-        "rate": 4.8,
+        "rate": 3.1,
+        "rate_class": "three",
         "overview": "Microsoft Outlook Express was an email and news client that was bundled with Internet Explorer 4.0 through 6.0. It was also part of the Mac release of Microsoft Office. It has since been replaced by Windows Mail, which was replaced by the discontinued Windows Live Mail program. </br> Outlook Express lets you quickly and easily browse and manage your email. It can manage multiple email accounts from various email systems including POP and IMAP. It also has HTML editing features for sending emails so you can customize your messages as creatively as you desire. </br> There are many different email clients that are available, most of which are free. Because Outlook Express is no longer supported and is notorious for security and stability issues, it is not a recommended choice for checking email. It doesn't even have very effective spam blocking, unlike many email clients available today. If you are looking for a new email client, you are better off trying a different program like Mozilla Thunderbird.",
         "main_feature": [
             "Checks and sends email",
@@ -543,10 +538,8 @@
         "name": "Microsoft Visual Studio",
         "icon": "microsoft_visual_studio.png",
         "version": "6",
-        "group": {
-            "id": 1,
-            "name": "Microsoft"
-        },
+        "group_id": 1,
+        "group_name": "Microsoft",
         "update_day": "4/28/2017",
         "platform": [
             "win"
@@ -555,7 +548,8 @@
         "category_id": 1,
         "category_name": "productivity",
         "total_vote": 568,
-        "rate": 4.8,
+        "rate": 3.8,
+        "rate_class": "three-half",
         "overview": "Microsoft Outlook Express was an email and news client that was bundled with Internet Explorer 4.0 through 6.0. It was also part of the Mac release of Microsoft Office. It has since been replaced by Windows Mail, which was replaced by the discontinued Windows Live Mail program. </br> Outlook Express lets you quickly and easily browse and manage your email. It can manage multiple email accounts from various email systems including POP and IMAP. It also has HTML editing features for sending emails so you can customize your messages as creatively as you desire. </br> There are many different email clients that are available, most of which are free. Because Outlook Express is no longer supported and is notorious for security and stability issues, it is not a recommended choice for checking email. It doesn't even have very effective spam blocking, unlike many email clients available today. If you are looking for a new email client, you are better off trying a different program like Mozilla Thunderbird.",
         "main_feature": [
             "Checks and sends email",

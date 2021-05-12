@@ -22,36 +22,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr role="row" *ngFor="let s of soft_list">
+                    <tr role="row" *ngFor="let s of soft_list" [ngClass]="[s.rate_class]">
                         <td><a [routerLink]="['/software', s.id]">{{s.name}}</a></td>
-                        <td class="sorting_1"><span class="hidden">132</span><span class="rtg five"></span>
+                        <td class="sorting_1"><span class="hidden">132</span><span class="rtg"></span>
                         </td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div class="adBotLB">
-            <div id="div-gpt-ad-1589913000288-0">
-                <script>
-                    googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589913000288-0'); });
-                </script>
-            </div>
         </div>
     </div>
 </div>
 <div id="right">
     <h5>All Categories</h5>
     <ul class="cnav">
-        <li *ngFor="let category of categories; let last = last"
-            [ngClass]="                                                                                                                                                                                                                                                                                                                                            { last: last }">
+        <li *ngFor="let category of categories; let last = last" [ngClass]=" { last: last }">
             <a [routerLink]="['/software/category', category.id]">{{category.name}}</a>
         </li>
     </ul>
-</div>
-<div class="adRightSky" style="position: fixed; top: 46px;">
-    <div id="div-gpt-ad-1589922228072-0">
-        <script>
-            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589922228072-0'); });
-        </script>
-    </div>
 </div>

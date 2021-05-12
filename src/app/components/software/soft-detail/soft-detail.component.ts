@@ -15,7 +15,7 @@ export class SoftDetailComponent implements OnInit {
   file_sup: any = [];
   additional_file: any = [];
   main_feature: any = [];
-  pre: any;
+  pre: any = {};
   next: any = {};
   num_id: any = {};
   type: any;
@@ -39,7 +39,6 @@ export class SoftDetailComponent implements OnInit {
       this.additional_file = this.soft.additional_file;
       this.main_feature = this.soft.main_feature;
       this.type = typeof this.additional_file;
-      console.log(this.type);
 
       this.file_sup = this.soft.file_sup;
 
@@ -53,8 +52,6 @@ export class SoftDetailComponent implements OnInit {
       } else {
         this.next = this.softwares.find((el: { id: number; }) => el.id === this.num_id + 1);
       }
-      console.log(this.next);
-
     });
   }
 

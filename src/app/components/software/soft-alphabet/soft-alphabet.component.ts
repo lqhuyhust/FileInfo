@@ -21,7 +21,7 @@ export class SoftAlphabetComponent implements OnInit {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
-    this.letter = this.route.snapshot.params['id'].toLocaleUpperCase();
+    this.letter = this.route.snapshot.params['id'].toLocaleUpperCase() == 1 ? '#' : this.route.snapshot.params['id'].toLocaleUpperCase();
   }
 
   ngOnInit(): void {

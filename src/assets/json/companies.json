@@ -1,54 +1,67 @@
 [
     {
         "id": 1,
-        "name": "ABBYY"
+        "name": "ABBYY",
+        "soft_num": 2
     },
     {
         "id": 2,
-        "name": "ACCA"
+        "name": "ACCA",
+        "soft_num": 4
     },
     {
         "id": 3,
-        "name": "ACD Systems"
+        "name": "ACD Systems",
+        "soft_num": 1
     },
     {
         "id": 4,
-        "name": "Acronis"
+        "name": "Acronis",
+        "soft_num": 5
     },
     {
         "id": 5,
-        "name": "Autodesk"
+        "name": "Autodesk",
+        "soft_num": 5
     },
     {
         "id": 6,
-        "name": "Adobe"
+        "name": "Adobe",
+        "soft_num": 12
     },
     {
         "id": 7,
-        "name": "Akeeba"
+        "name": "Akeeba",
+        "soft_num": 4
     },
     {
         "id": 8,
-        "name": "Apple"
+        "name": "Apple",
+        "soft_num": 21
     },
     {
         "id": 9,
-        "name": "Apache"
+        "name": "Apache",
+        "soft_num": 8
     },
     {
         "id": 10,
-        "name": "Bare Bones"
+        "name": "Bare Bones",
+        "soft_num": 2
     },
     {
         "id": 11,
-        "name": "Corel"
+        "name": "Corel",
+        "soft_num": 7
     },
     {
         "id": 12,
-        "name": "Google"
+        "name": "Google",
+        "soft_num": 23
     },
     {
         "id": 13,
-        "name": "Microsoft"
+        "name": "Microsoft",
+        "soft_num": 24
     }
 ]

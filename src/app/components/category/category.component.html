@@ -1,13 +1,13 @@
 <div id="lwrap">
-    <div id="left">
-        <h5><a href="https://fileinfo.com/">Home</a> : <a href="https://fileinfo.com/browse/">Browse</a> :
-            Text Files</h5>
-        <h1 class="h2 circle"><a href="https://fileinfo.com/browse/" class="medCircle">
+    <div id="left" *ngIf="category">
+        <h5><a routerLink="/">Home</a> : <a routerLink="/browse">Browse</a> :
+            {{category.name}}</h5>
+        <h1 class="h2 circle"><a routerLink="/browse" class="medCircle">
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="m6 3v26h20v-19.40625l-.28125-.3125-6-6-.3125-.28125zm2 2h10v6h6v16h-16zm12 1.4375 2.5625 2.5625h-2.5625zm-9 6.5625v2h10v-2zm0 4v2h10v-2zm0 4v2h10v-2z">
                     </path>
-                </svg></a>Text Files</h1>
+                </svg></a>{{category.name}}</h1>
         <p>Text files contain textual data and may be saved in plain text or rich text formats. While most
             text files are documents created and saved by users, they can also be used by software
             developers to store program data. Examples of text files include word processing documents, log
@@ -20,35 +20,30 @@
             <table class="slist browselist dataTable no-footer" data-sort="2" id="DataTables_Table_0" role="grid">
                 <thead>
                     <tr role="row">
-                        <th (click)="sort('extension')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                        <th (click)="sort('name')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                             rowspan="1" colspan="1" aria-label="File Extension: activate to sort column ascending"
                             style="width: 157px;">File
                             Extension&nbsp;<i class="fa fa-sort"></i></th>
-                        <th (click)="sort('type')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                        <th (click)="sort('name')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                             rowspan="1" colspan="1" aria-label="File Type: activate to sort column ascending"
-                            style="width: 401px;">File Type&nbsp;<i class="fa fa-sort"></i>
+                            style="width: 401px;">
+                            File Type&nbsp;<i class="fa fa-sort"></i>
                         </th>
-                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                            aria-sort="ascending" aria-label="Popularity: activate to sort column descending"
-                            style="width: 120px;">Popularity</th>
+                        <th (click)="sort('popularity')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                            rowspan="1" colspan="1" aria-sort="ascending"
+                            aria-label="Popularity: activate to sort column descending" style="width: 120px;">Popularity
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let type of type_list | orderBy: key: reverse">
+                    <tr *ngFor="let type of type_list" [ngClass]="[type.rate_class]">
                         <td><a [routerLink]="['/extension', type.id]">{{type.name}}</a></td>
                         <td>{{type.type}}</td>
-                        <td class="sorting_1"><span class="hidden">187</span><span class="rtg four"></span>
+                        <td class="sorting_1"><span class="hidden">187</span><span class="rtg"></span>
                         </td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div class="adBotLB">
-            <div id="div-gpt-ad-1589913000288-0">
-                <script>
-                    googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589913000288-0'); });
-                </script>
-            </div>
         </div>
     </div>
 </div>
@@ -61,12 +56,5 @@
                 <a [routerLink]="['/filetypes', category.id]">{{category.name}}</a>
             </li>
         </ul>
-    </div>
-    <div class="adRightSky" style="position: fixed; top: 46px;">
-        <div id="div-gpt-ad-1589922228072-0">
-            <script>
-                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589922228072-0'); });
-            </script>
-        </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Router, ActivatedRoute } from '@angular/router';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-category',
@@ -9,8 +10,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CategoryComponent implements OnInit {
   categories: any = [];
+  category: any = '';
   types: any = [];
   type_list: any = [];
+  sortName: boolean = true;
 
   constructor(
     private httpClient: HttpClient,
@@ -27,6 +30,7 @@ export class CategoryComponent implements OnInit {
     this.httpClient.get("/assets/json/categories.json").subscribe(data => {
       console.log(data);
       this.categories = data;
+      this.category = this.categories.filter((el: { id: number; }) => el.id === +this.route.snapshot.params['id'])[0];
     });
 
     this.httpClient.get("/assets/json/types.json").subscribe(data => {
@@ -36,10 +40,13 @@ export class CategoryComponent implements OnInit {
     });
   }
 
-  key = 'extension';
-  reverse: boolean = false;
-  sort(key: string) {
-    this.key = key;
-    this.reverse = !this.reverse;
+  sort(field: string) {
+    if (this.sortName) {
+      this.type_list = _.orderBy(this.type_list, [field], ['asc']);
+    } else {
+      this.type_list = _.orderBy(this.type_list, [field], ['desc']);
+    }
+
+    this.sortName = !this.sortName;
   }
 }

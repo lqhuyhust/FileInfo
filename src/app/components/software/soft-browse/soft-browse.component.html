@@ -40,23 +40,25 @@
                 <table class="slist browselist dataTable no-footer" id="DataTables_Table_0" role="grid">
                     <thead>
                         <tr role="row">
-                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending"
+                            <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                aria-sort="ascending" aria-label="#: activate to sort column descending"
                                 style="width: 55px;">#
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                aria-label="Company: activate to sort column ascending" style="width: 374px;">Company
+                            <th (click)="sort('name')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                rowspan="1" colspan="1" aria-label="Company: activate to sort column ascending"
+                                style="width: 374px;">Company
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                            <th (click)="sort('soft_num')" class="sorting" tabindex="0"
+                                aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                                 aria-label="Number of Programs: activate to sort column ascending"
                                 style="width: 249px;">Number of Programs</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr role="row" *ngFor="let c of companies">
-                            <td class="sorting_1">{{c.id}}.</td>
-                            <td><a [routerLink]="['/software/list', c.id]">{{c.name}}</a></td>
-                            <td></td>
+                        <tr role="row" *ngFor="let c of companies ; let i = index">
+                            <td class="sorting_1">{{i+1}}.</td>
+                            <td><a [routerLink]="['/software/group', c.id]">{{c.name}}</a></td>
+                            <td style="text-align: center;">{{c.soft_num}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -66,11 +68,4 @@
 </div>
 <div id="right">
     <h5><a routerLink="/browse">File Types</a> | <a routerLink="/help">Help</a></h5>
-    <div class="adRightSky" style="">
-        <div id="div-gpt-ad-1589922228072-0">
-            <script>
-                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589922228072-0'); });
-            </script>
-        </div>
-    </div>
 </div>

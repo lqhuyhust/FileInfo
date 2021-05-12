@@ -1,8 +1,9 @@
 <div id="lwrap">
-    <div id="left">
-        <h5><a href="https://fileinfo.com/software/">Software</a> : <a
-                href="https://fileinfo.com/software/microsoft/">Microsoft</a> : Outlook Express</h5>
-        <article class="sw" *ngIf="soft">
+    <div id="left" *ngIf="soft">
+        <h5><a routerLink="/software">Software</a> : <a
+                [routerLink]="['/software/group', soft.group_id]">{{soft.group_name}}</a>
+            : {{soft.name}}</h5>
+        <article class="sw">
             <h1 class="medText">{{soft.name}}</h1>
             <div class="swHeader">
                 <div class="swIcon icon1" title="Microsoft Outlook Express Icon"></div>
@@ -104,13 +105,6 @@
                 </ul>
             </div>
             <p>{{soft.overview}}</p>
-            <div class="adBotLB">
-                <div id="div-gpt-ad-1589911043271-0">
-                    <script>
-                        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589911043271-0'); });
-                    </script>
-                </div>
-            </div>
             <h2 class="review supported">Supported File Types</h2>
             <br>
             <h4>Primary file extension</h4>
@@ -150,18 +144,4 @@
 <div id="right">
     <h5><a [routerLink]="['/software', pre.id]" *ngIf="pre">‹ {{pre.name}}</a> | <a
             [routerLink]="['/software', next.id]" *ngIf="next">{{next.name}} ›</a></h5>
-    <div class="linkAds">
-        <div id="div-gpt-ad-1617470860708-0">
-            <script>
-                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1617470860708-0'); });
-            </script>
-        </div>
-    </div>
-    <div class="adRightSky">
-        <div id="div-gpt-ad-1589922034061-0">
-            <script>
-                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589922034061-0'); });
-            </script>
-        </div>
-    </div>
 </div>

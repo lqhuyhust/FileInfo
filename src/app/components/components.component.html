@@ -18,16 +18,17 @@
                 <input type="text" name="term" id="term" tabindex="1" placeholder="Search" aria-label="Search"
                     aria-describedby="search-text" [(ngModel)]="searchText" (ngModelChange)="Search()"
                     autocomplete="off">
+                <div id="sdiv">
+                    <button type="submit" id="submit"><span class="visuallyhidden">Submit</span></button>
+                    <a id="sbutton" routerLink="/search">Advanced Search</a>
+                </div>
                 <ul id="filter-result" class="list-group list-group-flush" style="display: none;">
                     <!-- results of ngFor is passed to appFilter with argument searchText -->
                     <li class="list-group-item" *ngFor="let t of types">
                         <a [routerLink]="['/extension', t.id]">{{t.name}}</a>
                     </li>
                 </ul>
-                <div id="sdiv">
-                    <button type="submit" id="submit"><span class="visuallyhidden">Submit</span></button>
-                    <a id="sbutton" routerLink="/search">Advanced Search</a>
-                </div>
+
             </div>
         </form>
         <a routerLink="/random" class="random" title="Random Extension"></a>

@@ -1,0 +1,45 @@
+<div id="lwrap">
+    <div id="left">
+        <h5><a routerLink="/">Home</a> : <a routerLink="/software">Software</a>
+            : <a routerLink="/software/browse">Browse</a> : {{letter}} Software Programs</h5>
+        <h1 class="h2"><a routerLink="/software/browse" class="medCircle">
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m6 5c-1.105469 0-2 .894531-2 2s.894531 2 2 2 2-.894531 2-2-.894531-2-2-2zm5 1v2h17v-2zm-5 8c-1.105469 0-2 .894531-2 2s.894531 2 2 2 2-.894531 2-2-.894531-2-2-2zm5 1v2h17v-2zm-5 8c-1.105469 0-2 .894531-2 2s.894531 2 2 2 2-.894531 2-2-.894531-2-2-2zm5 1v2h17v-2z">
+                    </path>
+                </svg></a>{{letter}} Software Programs</h1>
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+            <table class="slist browselist dataTable no-footer" id="DataTables_Table_0" role="grid">
+                <thead>
+                    <tr role="row">
+                        <th (click)="sort('name')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                            rowspan="1" colspan="1" aria-label="Software Program: activate to sort column descending"
+                            aria-sort="ascending" style="width: 402px;">Software Program</th>
+                        <th (click)="sort('star')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                            rowspan="1" colspan="1" aria-label="Rating: activate to sort column ascending"
+                            style="width: 296px;">Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr role="row" *ngFor="let s of soft_list" [ngClass]="[s.star_class]">
+                        <td class="sorting_1"><a [routerLink]="['/software', s.id]">{{s.name}}</a>
+                        </td>
+                        <td><span class="hidden">275</span><span class="rtg three-half"></span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="right">
+    <h5>Browse Alphabetically</h5>
+    <ul class="anav">
+        <li>
+            <a routerLink="/software/list/1">#</a>
+        </li>
+        <li *ngFor="let el of alphabet">
+            <a [routerLink]="['/software/list', el]">{{el}}</a>
+        </li>
+    </ul>
+</div>

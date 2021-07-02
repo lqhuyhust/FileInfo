@@ -1,0 +1,38 @@
+<div id="lwrap">
+    <div id="left">
+        <h5><a routerLink="/">Home</a> : Browse File Types</h5>
+        <article class="browse">
+            <h1 class="h2 circle"><a routerLink="/" class="largeCircle">
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m6 5c-1.105469 0-2 .894531-2 2s.894531 2 2 2 2-.894531 2-2-.894531-2-2-2zm5 1v2h17v-2zm-5 8c-1.105469 0-2 .894531-2 2s.894531 2 2 2 2-.894531 2-2-.894531-2-2-2zm5 1v2h17v-2zm-5 8c-1.105469 0-2 .894531-2 2s.894531 2 2 2 2-.894531 2-2-.894531-2-2-2zm5 1v2h17v-2z">
+                        </path>
+                    </svg></a>Browse File Types</h1>
+            <div class="category">
+                <h3>Browse by Category</h3>
+                <ul class="category-list">
+                    <li class="category-item">
+                        <a routerLink="/filetypes/0">Common File Types</a>
+                    </li>
+                    <li *ngFor="let category of categories" class="category-item">
+                        <a [routerLink]="['/filetypes', category.id]">{{category.name}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="alpha">
+                <h3>Browse Extensions Alphabetically</h3>
+                <ul class="alphabet-list">
+                    <li class="alphabet-item">
+                        <a [routerLink]="['/list/1']">#</a>
+                    </li>
+                    <li *ngFor="let el of alphabet" class="alphabet-item">
+                        <a [routerLink]="['/list', el]">{{el}}</a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</div>
+<div id="right">
+    <h5><a routerLink="/software/">Software</a> | <a routerLink="/help/">Help</a></h5>
+</div>

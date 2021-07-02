@@ -1,0 +1,95 @@
+<div id="lwrap">
+    <div id="left">
+        <h5><a href="https://fileinfo.com/">Home</a> : Software</h5>
+        <article class="sw">
+            <h1 class="reviews">Software Programs</h1>
+            <h2>Software Program of the Day:</h2>
+            <div><a href="https://fileinfo.com/software/roxio/toast" class="dailyProgram">
+                    <div class="swIcon icon1"></div>
+                    <p>Roxio Toast</p>
+                </a>
+            </div>
+            <p>FileInfo provides information about hundreds of popular software programs. Each overview
+                includes a description of the program, the software's primary features, and of course a list
+                of supported file types. Our goal is to provide an objective review of each software
+                application so you can determine if it is right for you.</p>
+            <h3>Top 20 Highest Rated Programs</h3>
+            <table class="software list browselist">
+                <tbody>
+                    <tr>
+                        <th colspan="2">Software Title</th>
+                        <th>Platform</th>
+                        <th>Rating</th>
+                    </tr>
+                    <tr *ngFor="let s of softwares ; let i = index">
+                        <td>{{i+1}}</td>
+                        <td><a [routerLink]="['/software', s.id]">
+                                <div class="appIcon icon22"></div>{{s.name}}
+                            </a></td>
+                        <td class="os">
+                            <ul class="osIcon">
+                                <li *ngFor="let item of s.platform" [ngClass]="item"></li>
+                            </ul>
+                        </td>
+                        <td><span class="rtg four-half"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>10 Most Recently Added Programs</h3>
+            <table class="software list browselist">
+                <tbody>
+                    <tr>
+                        <th colspan="2">Software Title</th>
+                        <th>Platform</th>
+                        <th>Rating</th>
+                    </tr>
+                    <tr *ngFor="let s of softwares ; let i = index">
+                        <td>{{i+1}}</td>
+                        <td><a [routerLink]="['/software', s.id]">
+                                <div class="appIcon icon22"></div>{{s.name}}
+                            </a></td>
+                        <td class="os">
+                            <ul class="osIcon">
+                                <li *ngFor="let item of s.platform" [ngClass]="item"></li>
+                            </ul>
+                        </td>
+                        <td><span class="rtg four-half"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>10 Most Recently Updated Programs</h3>
+            <table class="software list browselist">
+                <tbody>
+                    <tr>
+                        <th colspan="2">Software Title</th>
+                        <th>Platform</th>
+                        <th>Rating</th>
+                    </tr>
+                    <tr *ngFor="let s of softwares ; let i = index">
+                        <td>{{i+1}}</td>
+                        <td><a [routerLink]="['/software', s.id]">
+                                <div class="appIcon icon22"></div>{{s.name}}
+                            </a></td>
+                        <td class="os">
+                            <ul class="osIcon">
+                                <li *ngFor="let item of s.platform" [ngClass]="item"></li>
+                            </ul>
+                        </td>
+                        <td><span class="rtg four-half"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </div>
+</div>
+<div id="right">
+    <h5><a routerLink="/browse">File Types</a> | <a routerLink="/help">Help</a></h5>
+    <div class="browseAll">
+        <p><a routerLink="/software/browse" class="navButton side">Browse All Software</a></p>
+    </div>
+    <div class="top">
+        <p>Get <b>File Viewer</b> for free!<br>Choose your platform:</p>
+        <a href="https://fileinfo.com/software/windows_file_viewer" class="navButton dl">Windows</a>
+        <a href="https://fileinfo.com/software/mac_file_viewer" class="navButton dl">Mac</a>
+    </div>
+</div>

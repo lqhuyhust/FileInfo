@@ -1,0 +1,109 @@
+<div id="lwrap">
+    <div id="left" *ngIf="software">
+        <h5><a routerLink="/software">Software</a> : <a
+                [routerLink]="['/software/group', software.company_id]">{{software.company_name}}</a>
+            : {{software.name}}</h5>
+        <article class="sw">
+            <h1 class="medText">{{software.name}}</h1>
+            <div class="swHeader">
+                <div class="swIcon" title="Microsoft Outlook Express Icon">
+                    <img src="./../../../assets/img/software/{{software.icon}}" />
+                </div>
+                <table class="headerInfo">
+                    <tbody>
+                        <tr>
+                            <td>Version<br>
+                                <div class="vDate">(as {{software.update_day}})</div>
+                            </td>
+                            <td class="version"><span class="vNum">{{software.version}}</span></td>
+                        </tr>
+                        <tr>
+                            <td>Platforms</td>
+                            <td>
+                                <ul class="osIcon">
+                                    <li *ngFor="let item of softwares.platform" [ngClass]="item"></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>License</td>
+                            <td>{{software.license}}</td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td><a [routerLink]="['/software/category', software.cat_id]">{{software.cat_name}}</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="headerLink">
+                    <tbody>
+                        <tr>
+                            <td><a [href]="'http://' + software.url" rel="noopener" target="_blank" class="swLink">More
+                                    Info
+                                    <div class="pub">
+                                        (visit publisher's website)</div>
+                                </a></td>
+                        </tr>
+                        <tr>
+                            <td class="swRating">
+                                <div class="stars">Rating: <div id="ursHolder407"
+                                        class="ursHolder {{software.star_class}}"
+                                        data-termname="Microsoft Outlook Express">
+                                        <span class="hidden">187</span><span class="rtg">
+                                            <span style="margin-left: 120px;">{{software.star}} ({{software.vote}}
+                                                Votes)</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2 class="review">Software Overview</h2>
+            <div class="listBox features">
+                <p>Main Features</p>
+                <ul>
+                    <li *ngFor="let item of main_features">{{item}}</li>
+                </ul>
+            </div>
+            <div *ngFor="let item of overview">
+                <p>{{item}}</p>
+            </div>
+            <h2 class="review supported">Supported File Types</h2>
+            <br>
+            <h4>Primary file extension</h4>
+            <div class="primary"><b><a
+                        [routerLink]="['/extension', software.primary_file_id]">{{software.primary_file_name}}</a></b> –
+                {{software.primary_type_name}}</div>
+            <h4>Other file extensions used by {{software.name}} {{software.version}}</h4>
+            <table class="slist browselist dataTable no-footer" data-sort="2" id="DataTables_Table_0" role="grid">
+                <thead>
+                    <tr role="row">
+                        <th (click)="sort('file_name')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                            rowspan="1" colspan="1" aria-label="File Extension: activate to sort column ascending"
+                            style="width: 157px;">
+                            File
+                            Extension&nbsp;</th>
+                        <th (click)="sort('type_name')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                            rowspan="1" colspan="1" aria-label="File Type: activate to sort column ascending"
+                            style="width: 401px;">
+                            File Type&nbsp;
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let type of file_sup">
+                        <td><a [routerLink]="['/extension', type.id]">{{type.file_name}}</a></td>
+                        <td>{{type.type_name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="swDate">Updated: {{software.update_day}}</p>
+        </article>
+    </div>
+</div>
+<div id="right">
+    <h5><a [routerLink]="['/software', pre.id]" *ngIf="pre">‹ {{pre.name}}</a> | <a
+            [routerLink]="['/software', next.id]" *ngIf="next">{{next.name}} ›</a></h5>
+</div>

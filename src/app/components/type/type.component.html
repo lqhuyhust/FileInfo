@@ -1,0 +1,140 @@
+<div id="lwrap">
+    <div id="left" *ngIf="current">
+        <h5><a routerLink="/">Home</a> : <a routerLink="/browse">File Types</a>
+            : {{current.name}} File</h5>
+        <article>
+            <h1><b>{{current.name}}</b><span class="filext"> File Extension</span></h1>
+            <div class="multi">
+                <span type="button" class="" data-toggle="collapse" data-target="#typeList">
+                    {{type_num}} file types use the <strong>{{current.name}}</strong> file extension.
+                </span>
+                <div id="typeList" class="collapse">
+                    <ul>
+                        <li *ngFor="let t of types; let i = index">
+                            <span class="typeno">{{i+1}}.</span>
+                            <a href="">{{t.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <section *ngFor="let type of types; let i = index" id="filemaker_pro_database_memo_file"
+                [ngClass]="[type.star_class]">
+                <h2><span class=" fileType">File Type {{i+1}}: {{type.name}}</span></h2>
+
+                <div class="fileHeader">
+                    <div class="fileIcon default" title="Document Icon">
+                        <img src="./../../assets/img/logo/file-type/{{type.icon}}" />
+                    </div>
+                    <table class="headerInfo">
+                        <tbody>
+                            <tr>
+                                <td>Developer</td>
+                                <td>{{type.developer}}</td>
+                            </tr>
+                            <tr>
+                                <td>Popularity</td>
+                                <td class="sorting_1">
+                                    <span class="hidden">187</span><span class="rtg">
+                                        <span style="margin-left: 120px;">{{type.star}} ({{type.vote}} Votes)</span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Category</td>
+                                <td><a href="https://fileinfo.com/filetypes/database">Database Files</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Format</td>
+                                <td><a href="https://fileinfo.com/extension/fpt" class="formatButton"
+                                        data-id="0">N/A</a>
+                                    <div class="format"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="question">What is an {{current.name}} file?</h2>
+                <div class="infoBox">
+                    <p>{{type.info}}</p>
+                </div>
+                <h2 class="tab">More Information</h2>
+                <div class="infoBox">
+                    <p>{{type.more_info}}</p>
+                </div>
+                <a href="https://fileinfo.com/software/windows_file_viewer?ref=30" class="fv">
+                    <div class="promo">FREE DOWNLOAD</div> Open over 400 file formats with File Viewer Plus.
+                </a>
+                <div class="programsheading">
+                    <h2 class="question programsquestion">Programs that open FPT files</h2>
+                </div>
+                <div class="programsBox infoBox">
+                    <div class="programs">
+                        <div class="platformwrapper">
+                            <div class="platform">
+                                <div class="platIcon win"></div>Windows
+                            </div>
+                            <div class="apps">
+                                <div class="app">
+                                    <div class="appIcon a11"></div>
+                                    <div class="appmid">
+                                        <div class="program"><a
+                                                href="https://fileinfo.com/software/filemaker/filemaker_pro">FileMaker
+                                                Pro Advanced</a></div><span class="license trial">Free
+                                            Trial</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="programs">
+                        <div class="platformwrapper">
+                            <div class="platform">
+                                <div class="platIcon mac"></div>Mac
+                            </div>
+                            <div class="apps">
+                                <div class="app">
+                                    <div class="appIcon a12"></div>
+                                    <div class="appmid">
+                                        <div class="program"><a
+                                                href="https://fileinfo.com/software/filemaker/filemaker_pro">FileMaker
+                                                Pro Advanced</a></div><span class="license trial">Free
+                                            Trial</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="adBotLB">
+                    <div id="div-gpt-ad-1589912704162-0">
+                        <script>
+                            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589912704162-0'); });
+                        </script>
+                    </div>
+                </div>
+                <div class="extDate">Updated 1/29/2010</div>
+            </section>
+        </article>
+    </div>
+</div>
+<div id="right">
+    <h5 *ngIf="pre, next"><a [routerLink]="['/extension/', pre.id]">‹ {{pre.name}}</a> | <a
+            [routerLink]="['/extension/', next.id]">
+            {{next.name}}
+            ›</a></h5>
+    <div class="linkAds">
+        <script async="" src="./FPT File Extension - What is an .fpt file and how do I open it__files/f.txt"></script>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0087137714961591"
+            data-ad-slot="6153797207" data-ad-format="link"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+    <div class="adRightSky" style="position: fixed; top: 46px;">
+        <div id="div-gpt-ad-1589922359625-0">
+            <script>
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1589922359625-0'); });
+            </script>
+        </div>
+    </div>
+</div>

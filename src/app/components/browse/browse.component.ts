@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { GetDataService } from './../../services/get-data.service';
 
 @Component({
   selector: 'app-browse',
@@ -8,16 +8,17 @@ import { HttpClient } from "@angular/common/http";
 })
 export class BrowseComponent implements OnInit {
   categories: any = [];
+  temp_data: any;
   alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
   constructor(
-    private httpClient: HttpClient
+    private getData: GetDataService
   ) { }
 
   ngOnInit(): void {
-    this.httpClient.get("/assets/json/categories.json").subscribe(data => {
-      console.log(data);
-      this.categories = data;
+    this.getData.getAllCategories().subscribe(data => {
+      this.temp_data = data;
+      this.categories = this.temp_data['data'];
     })
   }
 

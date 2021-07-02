@@ -20,25 +20,25 @@
             <table class="slist browselist dataTable no-footer" data-sort="2" id="DataTables_Table_0" role="grid">
                 <thead>
                     <tr role="row">
-                        <th (click)="sort('name')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                        <th (click)="sort('file_name')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                             rowspan="1" colspan="1" aria-label="File Extension: activate to sort column ascending"
                             style="width: 157px;">File
-                            Extension&nbsp;<i class="fa fa-sort"></i></th>
-                        <th (click)="sort('name')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                            Extension&nbsp;</th>
+                        <th (click)="sort('type_name')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                             rowspan="1" colspan="1" aria-label="File Type: activate to sort column ascending"
                             style="width: 401px;">
-                            File Type&nbsp;<i class="fa fa-sort"></i>
+                            File Type&nbsp;
                         </th>
-                        <th (click)="sort('popularity')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                        <th (click)="sort('star')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                             rowspan="1" colspan="1" aria-sort="ascending"
                             aria-label="Popularity: activate to sort column descending" style="width: 120px;">Popularity
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let type of type_list" [ngClass]="[type.rate_class]">
-                        <td><a [routerLink]="['/extension', type.id]">{{type.name}}</a></td>
-                        <td>{{type.type}}</td>
+                    <tr *ngFor="let type of type_list" [ngClass]="[type.star_class]">
+                        <td><a [routerLink]="['/extension', type.id]">{{type.file_name}}</a></td>
+                        <td>{{type.type_name}}</td>
                         <td class="sorting_1"><span class="hidden">187</span><span class="rtg"></span>
                         </td>
                     </tr>

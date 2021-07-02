@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { GetDataService } from './../services/get-data.service';
 
 @Component({
   selector: 'app-components',
@@ -7,17 +7,27 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./components.component.css']
 })
 export class ComponentsComponent implements OnInit {
+  temp_data: any;
   types: any = [];
+  softwares: any = [];
   searchText: string = '';
 
   constructor(
-    private httpClient: HttpClient
+    private getData: GetDataService
   ) { }
 
   ngOnInit(): void {
-    this.httpClient.get("/assets/json/types.json").subscribe(data => {
-      this.types = data;
+    this.getData.getAllFiles().subscribe(data => {
+      this.temp_data = data;
+      this.types = this.temp_data['data'];
+      console.log(this.types);
     });
+    this.getData.getAllSoftwares().subscribe(data => {
+      this.temp_data = data;
+      this.softwares = this.temp_data['data'];
+      console.log(this.softwares);
+
+    })
   }
 
   Search() {
@@ -33,6 +43,9 @@ export class ComponentsComponent implements OnInit {
       console.log('change');
 
       this.types = this.types.filter((res: { name: string; }) => {
+        return res.name.toLocaleLowerCase().match(this.searchText.toLocaleLowerCase());
+      });
+      this.softwares = this.softwares.filter((res: { name: string }) => {
         return res.name.toLocaleLowerCase().match(this.searchText.toLocaleLowerCase());
       })
     }

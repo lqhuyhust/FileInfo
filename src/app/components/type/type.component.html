@@ -1,14 +1,31 @@
 <div id="lwrap">
-    <div id="left">
+    <div id="left" *ngIf="current">
         <h5><a routerLink="/">Home</a> : <a routerLink="/browse">File Types</a>
-            : {{type.name}} File</h5>
+            : {{current.name}} File</h5>
         <article>
-            <h1><b>{{type.name}}</b><span class="filext"> File Extension</span></h1>
+            <h1><b>{{current.name}}</b><span class="filext"> File Extension</span></h1>
+            <div class="multi">
+                <span type="button" class="" data-toggle="collapse" data-target="#typeList">
+                    {{type_num}} file types use the <strong>{{current.name}}</strong> file extension.
+                </span>
+                <div id="typeList" class="collapse">
+                    <ul>
+                        <li *ngFor="let t of types; let i = index">
+                            <span class="typeno">{{i+1}}.</span>
+                            <a href="">{{t.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-            <section id="filemaker_pro_database_memo_file" class="ext">
-                <h2><span class="fileType">File Type </span>{{type.type}}</h2>
+            <section *ngFor="let type of types; let i = index" id="filemaker_pro_database_memo_file"
+                [ngClass]="[type.star_class]">
+                <h2><span class=" fileType">File Type {{i+1}}: {{type.name}}</span></h2>
+
                 <div class="fileHeader">
-                    <div class="fileIcon default" title="Document Icon"></div>
+                    <div class="fileIcon default" title="Document Icon">
+                        <img src="./../../assets/img/logo/file-type/{{type.icon}}" />
+                    </div>
                     <table class="headerInfo">
                         <tbody>
                             <tr>
@@ -17,50 +34,10 @@
                             </tr>
                             <tr>
                                 <td>Popularity</td>
-                                <td>
-                                    <div id="ursHolder30" class="ursHolder" data-termname="fpt">
-                                        <div id="ratingStar130" class="star1 hoverStar fullStar starImg ratingStar30"
-                                            data-termid="30" data-starnum="1" style="display: block;"></div>
-                                        <div class="star1 hoverStar starImg emptyStar hidden greyStar30"
-                                            data-termid="30" data-starnum="1" style="display: none;"></div>
-                                        <div id="userStar130" class="star1 hoverStar starImg userStar hidden userStar30"
-                                            data-termid="30" data-starnum="1" style="display: none;"></div>
-                                        <div id="ratingStar230" class="star2 hoverStar starImg ratingStar30 fullStar"
-                                            data-termid="30" data-starnum="2" style="display: block;"></div>
-                                        <div class="star2 hoverStar starImg emptyStar hidden greyStar30"
-                                            data-termid="30" data-starnum="2" style="display: none;"></div>
-                                        <div id="userStar230" class="star2 hoverStar starImg userStar hidden userStar30"
-                                            data-termid="30" data-starnum="2" style="display: none;"></div>
-                                        <div id="ratingStar330" class="star3 hoverStar starImg ratingStar30 fullStar"
-                                            data-termid="30" data-starnum="3" style="display: block;"></div>
-                                        <div class="star3 hoverStar starImg emptyStar hidden greyStar30"
-                                            data-termid="30" data-starnum="3" style="display: none;"></div>
-                                        <div id="userStar330" class="star3 hoverStar starImg userStar hidden userStar30"
-                                            data-termid="30" data-starnum="3" style="display: none;"></div>
-                                        <div id="ratingStar430" class="star4 hoverStar starImg ratingStar30 halfStar"
-                                            data-termid="30" data-starnum="4" style="display: block;"></div>
-                                        <div class="star4 hoverStar starImg emptyStar hidden greyStar30"
-                                            data-termid="30" data-starnum="4" style="display: none;"></div>
-                                        <div id="userStar430" class="star4 hoverStar starImg userStar hidden userStar30"
-                                            data-termid="30" data-starnum="4" style="display: none;"></div>
-                                        <div id="ratingStar530" class="star5 hoverStar starImg ratingStar30 emptyStar"
-                                            data-termid="30" data-starnum="5" style="display: block;"></div>
-                                        <div class="star5 hoverStar starImg emptyStar hidden greyStar30"
-                                            data-termid="30" data-starnum="5" style="display: none;"></div>
-                                        <div id="userStar530" class="star5 hoverStar starImg userStar hidden userStar30"
-                                            data-termid="30" data-starnum="5" style="display: none;"></div>
-                                        <div id="ratingNum30" class="ratingNum">
-                                            <div class="ratingsTotals">
-                                                <span id="avgVote30" class="avgVote">3.4</span>
-                                                (<span id="voteCount30" class="voteCount">25</span>
-                                                <span id="voteWord30" class="voteWord"> Votes</span>)
-                                                <span id="voteThanks30" class="voteThanks hidden"></span>
-                                            </div>
-                                        </div>
-                                        <div id="ratingMsgDiv30" class="ratingMsgDiv">
-                                            <span id="rateMsg30" class="ratingMsg" style="display: none;">Common</span>
-                                        </div>
-                                    </div>
+                                <td class="sorting_1">
+                                    <span class="hidden">187</span><span class="rtg">
+                                        <span style="margin-left: 120px;">{{type.star}} ({{type.vote}} Votes)</span>
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
@@ -78,11 +55,11 @@
                         </tbody>
                     </table>
                 </div>
-                <h2 class="question">What is an FPT file?</h2>
+                <h2 class="question">What is an {{current.name}} file?</h2>
                 <div class="infoBox">
                     <p>{{type.info}}</p>
                 </div>
-                <div class="tab">More Information</div>
+                <h2 class="tab">More Information</h2>
                 <div class="infoBox">
                     <p>{{type.more_info}}</p>
                 </div>
@@ -91,22 +68,6 @@
                 </a>
                 <div class="programsheading">
                     <h2 class="question programsquestion">Programs that open FPT files</h2>
-                    <div class="programsmenu">
-                        <button class="sort">Sort</button>
-                        <div class="sortmenu">
-                            <div class="sortoptions">
-                                <button class="psort" data-sort="license">Pricing</button>
-                                <button class="psort" data-sort="program">Program Name</button>
-                                <button class="psort" data-sort="platform">Platform</button>
-                            </div>
-                            <button class="sort-reset">Reset</button>
-                        </div>
-                        <button class="licenseheading" aria-label="pricing details"></button>
-                        <div class="licenseinfo">
-                            <div class="licenseinfox"><a href="https://fileinfo.com/extension/fpt" aria-label="close"
-                                    style="outline: none;">X</a></div>
-                        </div>
-                    </div>
                 </div>
                 <div class="programsBox infoBox">
                     <div class="programs">
@@ -156,14 +117,11 @@
                 <div class="extDate">Updated 1/29/2010</div>
             </section>
         </article>
-        <div class="fileinfo">
-            <h4>About FPT Files</h4>
-            <p>{{type.about}}</p>
-        </div>
     </div>
 </div>
 <div id="right">
-    <h5><a [routerLink]="['/extension/', pre.id]">‹ {{pre.name}}</a> | <a [routerLink]="['/extension/', next.id]">
+    <h5 *ngIf="pre, next"><a [routerLink]="['/extension/', pre.id]">‹ {{pre.name}}</a> | <a
+            [routerLink]="['/extension/', next.id]">
             {{next.name}}
             ›</a></h5>
     <div class="linkAds">

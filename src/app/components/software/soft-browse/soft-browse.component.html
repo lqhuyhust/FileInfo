@@ -48,8 +48,8 @@
                                 rowspan="1" colspan="1" aria-label="Company: activate to sort column ascending"
                                 style="width: 374px;">Company
                             </th>
-                            <th (click)="sort('soft_num')" class="sorting" tabindex="0"
-                                aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                            <th (click)="sort('number')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                rowspan="1" colspan="1"
                                 aria-label="Number of Programs: activate to sort column ascending"
                                 style="width: 249px;">Number of Programs</th>
                         </tr>
@@ -58,7 +58,7 @@
                         <tr role="row" *ngFor="let c of companies ; let i = index">
                             <td class="sorting_1">{{i+1}}.</td>
                             <td><a [routerLink]="['/software/group', c.id]">{{c.name}}</a></td>
-                            <td style="text-align: center;">{{c.soft_num}}</td>
+                            <td style="text-align: center;">{{c.number}}</td>
                         </tr>
                     </tbody>
                 </table>

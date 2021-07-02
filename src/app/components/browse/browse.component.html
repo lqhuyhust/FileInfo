@@ -11,6 +11,9 @@
             <div class="category">
                 <h3>Browse by Category</h3>
                 <ul class="category-list">
+                    <li class="category-item">
+                        <a routerLink="/filetypes/0">Common File Types</a>
+                    </li>
                     <li *ngFor="let category of categories" class="category-item">
                         <a [routerLink]="['/filetypes', category.id]">{{category.name}}</a>
                     </li>

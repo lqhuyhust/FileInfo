@@ -12,15 +12,16 @@
             <table class="slist browselist dataTable no-footer" id="DataTables_Table_0" role="grid">
                 <thead>
                     <tr role="row">
-                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                            aria-label="Software Program: activate to sort column descending" aria-sort="ascending"
-                            style="width: 402px;">Software Program</th>
-                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                            aria-label="Rating: activate to sort column ascending" style="width: 296px;">Rating</th>
+                        <th (click)="sort('name')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                            rowspan="1" colspan="1" aria-label="Software Program: activate to sort column descending"
+                            aria-sort="ascending" style="width: 402px;">Software Program</th>
+                        <th (click)="sort('star')" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                            rowspan="1" colspan="1" aria-label="Rating: activate to sort column ascending"
+                            style="width: 296px;">Rating</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr role="row" *ngFor="let s of soft_list">
+                    <tr role="row" *ngFor="let s of soft_list" [ngClass]="[s.star_class]">
                         <td class="sorting_1"><a [routerLink]="['/software', s.id]">{{s.name}}</a>
                         </td>
                         <td><span class="hidden">275</span><span class="rtg three-half"></span></td>

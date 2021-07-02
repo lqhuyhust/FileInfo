@@ -27,6 +27,9 @@
                     <li class="list-group-item" *ngFor="let t of types">
                         <a [routerLink]="['/extension', t.id]">{{t.name}}</a>
                     </li>
+                    <li class="list-group-item" *ngFor="let s of softwares">
+                        <a [routerLink]="['/sofware', s.id]">{{s.name}}</a>
+                    </li>
                 </ul>
 
             </div>

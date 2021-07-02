@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
 import * as _ from 'lodash';
+import { GetDataService } from './../../../services/get-data.service';
 
 @Component({
   selector: 'app-soft-browse',
@@ -8,23 +8,24 @@ import * as _ from 'lodash';
   styleUrls: ['./soft-browse.component.css']
 })
 export class SoftBrowseComponent implements OnInit {
+  temp_data: any;
   categories: any = [];
   companies: any = [];
   sortField: boolean = true;
   alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
   constructor(
-    private httpClient: HttpClient
+    private getData: GetDataService
   ) { }
 
   ngOnInit(): void {
-    this.httpClient.get("/assets/json/soft-categories.json").subscribe(data => {
-      console.log(data);
-      this.categories = data;
+    this.getData.getAllCompanies().subscribe(data => {
+      this.temp_data = data;
+      this.companies = this.temp_data['data'];
     })
-    this.httpClient.get("/assets/json/companies.json").subscribe(data => {
-      console.log(data);
-      this.companies = data;
+    this.getData.getAllSoftCategories().subscribe(data => {
+      this.temp_data = data;
+      this.categories = this.temp_data['data'];
     })
   }
 

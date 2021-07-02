@@ -3,10 +3,8 @@ const softwares = require('../models/softwares')
 module.exports = (response) => ({
     handleGetSoftware: (softId) => {
         softwares.getSoftwareById(softId, (err, result) => {
-            console.log(softId);
-            console.log(result);
-
             if (err) {
+                console.log(err);
                 response.end(
                     JSON.stringify({
                         status: 500,
@@ -99,6 +97,48 @@ module.exports = (response) => ({
     },
     handleGetAllSoftwares: () => {
         softwares.getAllSoftwares((err, result) => {
+            if (err) {
+                response.end(
+                    JSON.stringify({
+                        status: 500,
+                        success: false,
+                        message: 'Internal server error',
+                    }),
+                )
+            } else {
+                response.end(
+                    JSON.stringify({
+                        status: 200,
+                        success: true,
+                        data: result,
+                    }),
+                )
+            }
+        })
+    },
+    handleSoftwaresByAlphabet: (x) => {
+        softwares.getSoftwaresByAlphabet(x, (err, result) => {
+            if (err) {
+                response.end(
+                    JSON.stringify({
+                        status: 500,
+                        success: false,
+                        message: 'Internal server error',
+                    }),
+                )
+            } else {
+                response.end(
+                    JSON.stringify({
+                        status: 200,
+                        success: true,
+                        data: result,
+                    }),
+                )
+            }
+        })
+    },
+    handleGetSoftwaresBySpecial: () => {
+        softwares.getSoftwaresBySpecial((err, result) => {
             if (err) {
                 response.end(
                     JSON.stringify({

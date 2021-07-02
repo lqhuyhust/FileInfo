@@ -1,8 +1,8 @@
-const platforms = require('../models/platform')
+const platforms = require('../models/companies')
 
 module.exports = (response) => ({
-    handleGetPlatformOfSoftware: (softId) => {
-        platforms.getPlatformBySoftwareId(softId, (err, result) => {
+    handleGetAllCompanies: () => {
+        platforms.getAllCompanies((err, result) => {
             if (err) {
                 response.end(
                     JSON.stringify({

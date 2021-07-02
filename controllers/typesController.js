@@ -1,11 +1,66 @@
 const types = require('../models/types');
 
 module.exports = (response) => ({
+    handleGetAllTypes: (catId) => {
+        types.getAllTypes((err, result) => {
+            if (err) {
+                response.end(
+                    JSON.stringify({
+                        status: 500,
+                        success: false,
+                        message: 'Internal server error',
+                    }),
+                )
+            } else if (result === false) {
+                response.end(
+                    JSON.stringify({
+                        status: 201,
+                        success: false,
+                        message: 'No such category exists',
+                    }),
+                )
+            } else {
+                response.end(
+                    JSON.stringify({
+                        status: 200,
+                        success: true,
+                        data: result,
+                    }),
+                )
+            }
+        })
+    },
     handleGetTypesByCategory: (catId) => {
         types.getTypesByCategory(catId, (err, result) => {
-            console.log(catId);
-            console.log(result);
-
+            if (err) {
+                response.end(
+                    JSON.stringify({
+                        status: 500,
+                        success: false,
+                        message: 'Internal server error',
+                    }),
+                )
+            } else if (result === false) {
+                response.end(
+                    JSON.stringify({
+                        status: 201,
+                        success: false,
+                        message: 'No such category exists',
+                    }),
+                )
+            } else {
+                response.end(
+                    JSON.stringify({
+                        status: 200,
+                        success: true,
+                        data: result,
+                    }),
+                )
+            }
+        })
+    },
+    handleGetTypesBySoftware: (softId) => {
+        types.getTypesBySoftware(softId, (err, result) => {
             if (err) {
                 response.end(
                     JSON.stringify({
@@ -35,9 +90,6 @@ module.exports = (response) => ({
     },
     handleGetTypesByAlphabet: (x) => {
         types.getTypesByAlphabet(x, (err, result) => {
-            console.log(x);
-            console.log(result);
-
             if (err) {
                 response.end(
                     JSON.stringify({
@@ -66,7 +118,7 @@ module.exports = (response) => ({
         })
     },
     handleGetTypesBySpecial: () => {
-        types.getTypesByAlphabet((err, result) => {
+        types.getTypesBySpecial((err, result) => {
             console.log(result);
 
             if (err) {
@@ -98,9 +150,35 @@ module.exports = (response) => ({
     },
     handleGetTypesByFile: (fileId) => {
         types.getTypesByFile(fileId, (err, result) => {
-            console.log(fileId);
-            console.log(result);
-
+            if (err) {
+                response.end(
+                    JSON.stringify({
+                        status: 500,
+                        success: false,
+                        message: 'Internal server error',
+                    }),
+                )
+            } else if (result === false) {
+                response.end(
+                    JSON.stringify({
+                        status: 201,
+                        success: false,
+                        message: 'No such category exists',
+                    }),
+                )
+            } else {
+                response.end(
+                    JSON.stringify({
+                        status: 200,
+                        success: true,
+                        data: result,
+                    }),
+                )
+            }
+        })
+    },
+    handleAllFiles: () => {
+        types.getAllFiles((err, result) => {
             if (err) {
                 response.end(
                     JSON.stringify({

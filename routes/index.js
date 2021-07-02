@@ -3,6 +3,7 @@ const types = require('../controllers/typesController')
 const softwares = require('../controllers/softwaresController')
 const soft_categories = require('../controllers/softCategoriesController')
 const platforms = require('../controllers/platformController')
+const companies = require('../controllers/companiesController')
 
 module.exports = (url, request, response) => {
   const categoryController = categories(response)
@@ -10,6 +11,7 @@ module.exports = (url, request, response) => {
   const softwareController = softwares(response)
   const softCategoryController = soft_categories(response)
   const platformsController = platforms(response)
+  const companiesController = companies(response)
 
   switch (url.pathname) {
     case '/categories':
@@ -25,18 +27,21 @@ module.exports = (url, request, response) => {
         const catId = url.searchParams.get('cat_id')
         const alpha = url.searchParams.get('alpha')
         const fileId = url.searchParams.get('file_id')
+        const softId = url.searchParams.get('soft_id')
 
         if (fileId !== null) {
           typeController.handleGetTypesByFile(fileId)
         } else if (catId !== null) {
           typeController.handleGetTypesByCategory(catId)
+        } else if (softId !== null) {
+          typeController.handleGetTypesBySoftware(softId)
         } else if (alpha !== null) {
-          if (alpha === 1) {
+          if (alpha == 1) {
             typeController.handleGetTypesBySpecial()
           } else {
             typeController.handleGetTypesByAlphabet(alpha)
           }
-        }
+        } typeController.handleGetAllTypes()
       }
       break
     case '/softwares':
@@ -44,6 +49,7 @@ module.exports = (url, request, response) => {
         const catId = url.searchParams.get('cat_id')
         const comId = url.searchParams.get('com_id')
         const id = url.searchParams.get('id')
+        const alpha = url.searchParams.get('alpha')
 
         if (id !== null) {
           softwareController.handleGetSoftware(id)
@@ -51,6 +57,12 @@ module.exports = (url, request, response) => {
           softwareController.handleGetSoftwareByCategory(catId)
         } else if (comId !== null) {
           softwareController.handleGetSoftwareByCompany(comId)
+        } else if (alpha !== null) {
+          if (alpha == 1) {
+            softwareController.handleGetSoftwaresBySpecial()
+          } else {
+            softwareController.handleSoftwaresByAlphabet(alpha)
+          }
         } else softwareController.handleGetAllSoftwares()
       }
       break
@@ -68,6 +80,23 @@ module.exports = (url, request, response) => {
         if (softId !== null) {
           platformsController.handleGetPlatformOfSoftware(softId)
         }
+      }
+      break
+    case '/companies':
+      if (request.method === 'GET') {
+        const softId = url.searchParams.get('id')
+        companiesController.handleGetAllCompanies()
+        // if (softId !== null) {
+        //   platformsController.handleGetPlatformOfSoftware()
+        // }
+      }
+      break
+    case '/files':
+      if (request.method === 'GET') {
+        typeController.handleAllFiles()
+        // if (softId !== null) {
+        //   platformsController.handleGetPlatformOfSoftware()
+        // }
       }
       break
     default:

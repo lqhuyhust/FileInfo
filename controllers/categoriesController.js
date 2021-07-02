@@ -3,8 +3,6 @@ const categories = require('../models/categories.js')
 module.exports = (response) => ({
     handleGetCategory: (catId) => {
         categories.getCategory(catId, (err, result) => {
-            console.log(catId);
-            console.log(result);
 
             if (err) {
                 response.end(
